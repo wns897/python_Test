@@ -7,17 +7,6 @@ import time
 ```
 
 
-    ---------------------------------------------------------------------------
-
-    ModuleNotFoundError                       Traceback (most recent call last)
-
-    <ipython-input-1-f080a2e88f8d> in <module>
-          1 #필요한 라이브러리 불러오기
-          2 import requests
-    ----> 3 from bs4 import BeautifulSoup
-    
-
-    ModuleNotFoundError: No module named 'bs4'
 
 
 
@@ -32,67 +21,7 @@ r.status_code
 ```
 
 
-    ---------------------------------------------------------------------------
-
-    AttributeError                            Traceback (most recent call last)
-
-    <ipython-input-3-9dbcfafaae24> in <module>
-          4 url = "https://www.transfermarkt.com/spieler-statistik/wertvollstespieler/marktwertetop"
-          5 
-    ----> 6 r = requests.get(url, headers=headers)
-          7 r.status_code
-
-
-    /usr/local/lib/python3.7/site-packages/requests/api.py in get(url, params, **kwargs)
-         74 
-         75     kwargs.setdefault('allow_redirects', True)
-    ---> 76     return request('get', url, params=params, **kwargs)
-         77 
-         78 
-
-
-    /usr/local/lib/python3.7/site-packages/requests/api.py in request(method, url, **kwargs)
-         59     # cases, and look like a memory leak in others.
-         60     with sessions.Session() as session:
-    ---> 61         return session.request(method=method, url=url, **kwargs)
-         62 
-         63 
-
-
-    /usr/local/lib/python3.7/site-packages/requests/sessions.py in request(self, method, url, params, data, headers, cookies, files, auth, timeout, allow_redirects, proxies, hooks, stream, verify, cert, json)
-        514             hooks=hooks,
-        515         )
-    --> 516         prep = self.prepare_request(req)
-        517 
-        518         proxies = proxies or {}
-
-
-    /usr/local/lib/python3.7/site-packages/requests/sessions.py in prepare_request(self, request)
-        457             auth=merge_setting(auth, self.auth),
-        458             cookies=merged_cookies,
-    --> 459             hooks=merge_hooks(request.hooks, self.hooks),
-        460         )
-        461         return p
-
-
-    /usr/local/lib/python3.7/site-packages/requests/models.py in prepare(self, method, url, headers, files, data, params, auth, cookies, hooks, json)
-        313         self.prepare_method(method)
-        314         self.prepare_url(url, params)
-    --> 315         self.prepare_headers(headers)
-        316         self.prepare_cookies(cookies)
-        317         self.prepare_body(data, files, json)
-
-
-    /usr/local/lib/python3.7/site-packages/requests/models.py in prepare_headers(self, headers)
-        445         self.headers = CaseInsensitiveDict()
-        446         if headers:
-    --> 447             for header in headers.items():
-        448                 # Raise exception on invalid header value.
-        449                 check_header_validity(header)
-
-
-    AttributeError: 'set' object has no attribute 'items'
-
+   
 
 
 ```python
@@ -101,19 +30,6 @@ soup = BeautifulSoup(r.text,'html.parser') #r.content대신 r.text도 가능
 print(soup)
 
 ```
-
-
-    ---------------------------------------------------------------------------
-
-    NameError                                 Traceback (most recent call last)
-
-    <ipython-input-4-7b23d776d361> in <module>
-          1 #BeautifulSoup()으로 웹페이지 분석 준비하기
-    ----> 2 soup = BeautifulSoup(r.text,'html.parser') #r.content대신 r.text도 가능
-          3 print(soup)
-
-
-    NameError: name 'BeautifulSoup' is not defined
 
 
 
@@ -137,12 +53,6 @@ print(player_info[0])
 #전체 개수 확인하기
 print(len(player_info)
 ```
-
-
-      File "<ipython-input-6-689fdf9efb6b>", line 4
-        print(len(player_info)
-                              ^
-    SyntaxError: unexpected EOF while parsing
 
 
 
@@ -178,20 +88,7 @@ for info in player_info:
 ```
 
 
-    ---------------------------------------------------------------------------
-
-    NameError                                 Traceback (most recent call last)
-
-    <ipython-input-8-e2dbd2855f90> in <module>
-          1 #player_info에서 'td'태그만 모두 찾기
-    ----> 2 for info in player_info:
-          3     player = info.find_all("td")
-          4     #print(player)
-          5     #print(player[0])
-
-
-    NameError: name 'player_info' is not defined
-
+ 
 
 
 ```python

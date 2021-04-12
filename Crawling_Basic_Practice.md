@@ -49,18 +49,6 @@ soup = BeautifulSoup(html_doc, 'html.parser')
 ```
 
 
-    ---------------------------------------------------------------------------
-
-    ModuleNotFoundError                       Traceback (most recent call last)
-
-    <ipython-input-14-11f369478349> in <module>
-    ----> 1 from bs4 import BeautifulSoup
-          2 soup = BeautifulSoup(html_doc, 'html.parser')
-
-
-    ModuleNotFoundError: No module named 'bs4'
-
-
 
 ```python
 # p 태그 정보 가져오기(처음 나오는 것 한 개)
@@ -68,34 +56,9 @@ soup.p
 ```
 
 
-    ---------------------------------------------------------------------------
-
-    NameError                                 Traceback (most recent call last)
-
-    <ipython-input-16-33d903c81094> in <module>
-          1 # p 태그 정보 가져오기(처음 나오는 것 한 개)
-    ----> 2 soup.p
-    
-
-    NameError: name 'soup' is not defined
-
-
-
 ```python
 soup.find('p')
 ```
-
-
-    ---------------------------------------------------------------------------
-
-    NameError                                 Traceback (most recent call last)
-
-    <ipython-input-19-83b1b2773536> in <module>
-    ----> 1 soup.find('p')
-    
-
-    NameError: name 'soup' is not defined
-
 
 
 ```python
@@ -105,36 +68,11 @@ soup.a['href']
 ```
 
 
-    ---------------------------------------------------------------------------
-
-    NameError                                 Traceback (most recent call last)
-
-    <ipython-input-20-8d4acee334a8> in <module>
-          1 #a 태그에 있는 ''href' 속성값 가져오기(처음 나오는 것 한개)
-    ----> 2 soup.find('a')
-    
-
-    NameError: name 'soup' is not defined
-
-
-
 ```python
 #a 태그에 있는 텍스트 가져오기(처음 나오는 것 한 개)
 soup.find('a').text
 soup.find('a').get_text()
 ```
-
-
-    ---------------------------------------------------------------------------
-
-    NameError                                 Traceback (most recent call last)
-
-    <ipython-input-22-bf1498d19510> in <module>
-          1 #a 태그에 있는 텍스트 가져오기(처음 나오는 것 한 개)
-    ----> 2 soup.find('a').text
-    
-
-    NameError: name 'soup' is not defined
 
 
 
@@ -143,36 +81,10 @@ soup.find('a').get_text()
 soup.find_all('a')
 ```
 
-
-    ---------------------------------------------------------------------------
-
-    NameError                                 Traceback (most recent call last)
-
-    <ipython-input-23-0401d64d556c> in <module>
-          1 #a 태그에 있는 요소들 모두 가져오기
-    ----> 2 soup.find_all('a')
-    
-
-    NameError: name 'soup' is not defined
-
-
-
 ```python
 #두번째 a태그에 있는 정보 가져오기
 soup.find_all('a')[1]
 ```
-
-
-    ---------------------------------------------------------------------------
-
-    NameError                                 Traceback (most recent call last)
-
-    <ipython-input-24-8c9c61a8b011> in <module>
-          1 #두번째 a태그에 있는 정보 가져오기
-    ----> 2 soup.find_all('a')[1]
-    
-
-    NameError: name 'soup' is not defined
 
 
 
@@ -184,41 +96,12 @@ for i in a_list:
 ```
 
 
-    ---------------------------------------------------------------------------
-
-    NameError                                 Traceback (most recent call last)
-
-    <ipython-input-25-e97bb366007f> in <module>
-          1 # a 태그에 있는 'href'속성값 모두 가져오기
-    ----> 2 a_list = soup.find_all('a')
-          3 for i in a_list:
-          4     print(i['href'])
-
-
-    NameError: name 'soup' is not defined
-
-
-
 ```python
 #a 태그에 있는 텍스트 모두 가져오기
 a_list = soup.find_all('a')
 for i in a_list:
     print(i.text)
 ```
-
-
-    ---------------------------------------------------------------------------
-
-    NameError                                 Traceback (most recent call last)
-
-    <ipython-input-26-dd73d7150458> in <module>
-          1 #a 태그에 있는 텍스트 모두 가져오기
-    ----> 2 a_list = soup.find_all('a')
-          3 for i in a_list:
-          4     print(i.text)
-
-
-    NameError: name 'soup' is not defined
 
 
 
@@ -230,38 +113,11 @@ soup.find_all("a",{"class":"sister"})
 ```
 
 
-    ---------------------------------------------------------------------------
-
-    NameError                                 Traceback (most recent call last)
-
-    <ipython-input-28-2596b4fd6c83> in <module>
-          1 #태그와 속성갑을 같이 넣어 찾아오기
-          2 #a 태그 이면서 class가 sister인 값 모두 찾아오기
-    ----> 3 soup.find_all("a", class_="sister")
-    
-
-    NameError: name 'soup' is not defined
-
-
 
 ```python
 #a태그이면서 id가 link3인 요소들 모두 찾기
 soup.find_all("a", id="link3")
 ```
-
-
-    ---------------------------------------------------------------------------
-
-    NameError                                 Traceback (most recent call last)
-
-    <ipython-input-29-33fbe784015a> in <module>
-          1 #a태그이면서 id가 link3인 요소들 모두 찾기
-    ----> 2 soup.find_all("a", id="link3")
-    
-
-    NameError: name 'soup' is not defined
-
-
 
 ```python
 soup.find_all("a",{"id":"link3"})

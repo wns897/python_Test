@@ -80,3 +80,4 @@ df
 #df.to_csv()로 csv파일 만들기
 df,to_csv('transfermakt50.csv', index=False)
 ```
+ 
